@@ -1,23 +1,165 @@
+@import "./base.css";
 @import '@mdi/font/css/materialdesignicons.css';
-@import url('https://fonts.googleapis.com/css2?family=Belleza&family=Quicksand:wght@300..700&display=swap');
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
+#app {
+  margin: 0 auto;
+  padding: 2rem;
   font-weight: normal;
 }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  line-height: 1.6;
-  font-family: 'Quicksand', sans-serif;
-  font-size: 15px;
-  font-optical-sizing: auto;
-  font-style: normal;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+a {
+  text-decoration: none;
+  transition: 0.4s;
+  color: black
+}
+
+a:hover {
+  color: #00bd7e;
+}
+
+.open-checkbox-btn {
+  height: 25px !important;
+  width: 25px !important;
+  border-radius: 0 0 5px 5px !important;
+  margin-top: 1px;
+}
+
+.up-arrow-icon {
+  rotate: 180deg;
+}
+
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2vh;
+  transition: all .5s ease-in-out;
+
+  & .content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    padding: 1%;
+    border-radius: 5px;
+    border: 1px solid #000000
+  }
+
+  & button {
+    background-color: #000000;
+    border: #00bd7e solid 1px;
+    border-radius: 5px;
+    transition: all .3s ease-in-out;
+    height: 35px;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+  }
+
+  & button:hover {
+    background-color: #00bd7e;
+    border: 1px solid #000000;
+    animation: .2s ease-in-out shake;
+  }
+
+
+  & .form {
+    display: flex;
+    gap: 1vw;
+    min-height: 35px;
+    max-width: 60vw;
+    flex-wrap: wrap;
+
+    & input,
+    select {
+      outline: none;
+      border: #00bd7e solid 2px;
+      border-radius: 7px;
+      padding: 0 .6vw;
+      height: 35px;
+      background: #ffffff;
+    }
+
+
+  }
+
+  & ul {
+    list-style: none;
+    min-width: 20vw;
+    max-width: 30vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    gap: 1vh;
+    margin: 0 auto 0 auto;
+
+    & li {
+      width: 100%;
+      max-width: 20vw;
+      display: flex;
+      justify-content: space-between;
+    }
+
+  }
+
+  & .input-container {
+
+    & p {
+      font-size: .8em !important;
+    }
+
+    & .expanded-list,
+    .checkbox-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      height: 35px;
+      overflow-y: hidden;
+      border: #00bd7e solid 1px;
+      border-radius: 10px 10px 10px 0;
+      padding: 0 .5rem 0 .5rem;
+      transition: all .5s ease-in-out;
+      box-shadow: #a0a0a086 0px -2px 10px inset;
+    }
+
+    & .expanded-list,
+    .checkbox-container:hover {
+      height: auto !important;
+      transition: all .5s ease-in-out;
+      box-shadow: none;
+    }
+  }
+
+  & .checkbox-input {
+    display: flex;
+    align-items: center;
+    gap: .5vw
+  }
+}
+
+@keyframes shake {
+  0% {
+    translate: 0;
+    rotate: 0deg;
+  }
+
+  25% {
+    translate: 0 -.2vh;
+    rotate: 2deg;
+  }
+
+  75% {
+    translate: 0 .2vh;
+    rotate: -2deg;
+  }
+
+  100% {
+    translate: 0;
+    rotate: 0deg;
+
+  }
+
 }
