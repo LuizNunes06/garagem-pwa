@@ -1,5 +1,5 @@
 <script setup>
-defineProps(["label", "list", "step"]);
+defineProps(["label", "list"]);
 const model = defineModel();
 </script>
 <template>
