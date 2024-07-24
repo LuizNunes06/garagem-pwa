@@ -20,8 +20,8 @@ const expandCheckbox = ref(false);
       <i
         :class="
           !expandCheckbox
-            ? 'mdi mdi-12px mdi-arrow-down mdi-light'
-            : 'up-arrow-icon mdi mdi-12px mdi-arrow-down mdi-light'
+            ? 'mdi mdi-12px mdi-arrow-down '
+            : 'up-arrow-icon mdi mdi-12px mdi-arrow-down '
         "
       ></i>
     </button>
