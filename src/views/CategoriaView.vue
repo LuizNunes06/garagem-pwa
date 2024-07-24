@@ -44,15 +44,10 @@ async function excluir(id) {
   <div class="main-container">
     <div class="content-container">
       <div class="form">
-        <TextField
-          label="Descrição"
-          v-model="categoria.descricao"
-          placeholder="Descrição"
-        />
+        <TextField label="Descrição" v-model="categoria.descricao" placeholder="Descrição" />
         <FormButtonsComponent @clear="limpar()" @save="salvar()" />
       </div>
       <DescriptionList :list="categorias" :edit="editar" :remove="excluir" />
-     
     </div>
   </div>
 </template>

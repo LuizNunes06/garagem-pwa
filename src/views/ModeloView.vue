@@ -74,7 +74,7 @@ async function excluir(id) {
       <ul>
         <li v-for="modelo in modelos" :key="modelo.id">
           <span @click="editar(modelo)"> ({{ modelo.id }}) - {{ modelo.nome }} </span>
-          <button @click="excluir(categoria.id)">
+          <button @click="excluir(modelo.id)">
             <i class="mdi mdi-24px mdi-delete-outline mdi-light"></i>
           </button>
         </li>
