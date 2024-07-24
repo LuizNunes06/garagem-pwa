@@ -3,6 +3,8 @@ import { ref, reactive, onMounted, computed } from "vue";
 import ModelosApi from "@/api/modelos";
 import MarcasApi from "@/api/marcas";
 import CategoriasApi from "@/api/categorias";
+import { TextField, SelectField, FormButtonsComponent, NameList } from "@/components";
+
 const modelosApi = new ModelosApi();
 const marcasApi = new MarcasApi();
 const categoriasApi = new CategoriasApi();
@@ -51,34 +53,12 @@ async function excluir(id) {
   <div class="main-container">
     <div class="content-container">
       <div class="form">
-        <input type="text" v-model="modelo.nome" placeholder="Descrição" />
-        <select name="marca" v-model="modelo.marca">
-          <option v-for="(marca, index) in marcas" :key="index" :value="marca.id">
-            {{ marca.nome }}
-          </option>
-        </select>
-        <select name="categoria" v-model="modelo.categoria">
-          <option
-            v-for="(categoria, index) in categorias"
-            :key="index"
-            :value="categoria.id"
-          >
-            {{ categoria.descricao }}
-          </option>
-        </select>
-        <button @click="salvar">
-          <i class="mdi mdi-24px mdi-content-save-outline mdi-light" />
-        </button>
-        <button @click="limpar"><i class="mdi mdi-24px mdi-broom mdi-light"></i></button>
+        <TextField label="Nome" v-model="modelo.nome" placeholder="Nome" />
+        <SelectField label="Marca" :list="marcas" v-model="modelo.marca" />
+        <SelectField label="Categoria" :list="categorias" v-model="modelo.categoria" />
+        <FormButtonsComponent @clear="limpar()" @save="salvar()" />
       </div>
-      <ul>
-        <li v-for="modelo in modelos" :key="modelo.id">
-          <span @click="editar(modelo)"> ({{ modelo.id }}) - {{ modelo.nome }} </span>
-          <button @click="excluir(modelo.id)">
-            <i class="mdi mdi-24px mdi-delete-outline mdi-light"></i>
-          </button>
-        </li>
-      </ul>
+      <NameList :list="modelos" :edit="editar" :remove="excluir" />
     </div>
   </div>
 </template>

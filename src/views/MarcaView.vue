@@ -2,7 +2,7 @@
 import { ref, reactive, onMounted } from "vue";
 import MarcasApi from "@/api/marcas";
 
-import { TextField, FormButtonsComponent, DescriptionList } from "@/components";
+import { TextField, FormButtonsComponent, BrandList } from "@/components";
 
 const marcasApi = new MarcasApi();
 
@@ -45,20 +45,14 @@ async function excluir(id) {
     <div class="content-container">
       <div class="form">
         <TextField label="Descrição" v-model="marca.nome" placeholder="Descrição" />
-        <TextField label="Nacionalidade" v-model="marca.nacionalidade" placeholder="Nacionalidade" />
+        <TextField
+          label="Nacionalidade"
+          v-model="marca.nacionalidade"
+          placeholder="Nacionalidade"
+        />
         <FormButtonsComponent @clear="limpar()" @save="salvar()" />
       </div>
-
-      <ul>
-        <li v-for="marca in marcas" :key="marca.id">
-          <span @click="editar(marca)">
-            ({{ marca.id }}) - {{ marca.nome }} - {{ marca.nacionalidade }}
-          </span>
-          <button @click="excluir(marca.id)">
-            <i class="mdi mdi-24px mdi-delete-outline mdi-light"></i>
-          </button>
-        </li>
-      </ul>
+      <BrandList :list="marcas" :edit="editar" :remove="excluir" />
     </div>
   </div>
 </template>
