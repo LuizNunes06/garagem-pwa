@@ -1,6 +1,9 @@
 <script setup>
 import { ref, reactive, onMounted } from "vue";
 import CoresApi from "@/api/cores";
+
+import { TextField, FormButtonsComponent, NameList } from "@/components";
+
 const coresApi = new CoresApi();
 
 const defaultCor = { id: null, nome: "" };
@@ -41,20 +44,10 @@ async function excluir(id) {
   <div class="main-container">
     <div class="content-container">
       <div class="form">
-        <input type="text" v-model="cor.nome" placeholder="Descrição" />
-        <button @click="salvar">
-          <i class="mdi mdi-24px mdi-content-save-outline mdi-light" />
-        </button>
-        <button @click="limpar"><i class="mdi mdi-24px mdi-broom mdi-light"></i></button>
+        <TextField label="Nome" v-model="cor.nome" placeholder="Cor" />
+        <FormButtonsComponent @clear="limpar()" @save="salvar()" />
       </div>
-      <ul>
-        <li v-for="cor in cores" :key="cor.id">
-          <span @click="editar(cor)"> ({{ cor.id }}) - {{ cor.nome }} </span>
-          <button @click="excluir(categoria.id)">
-            <i class="mdi mdi-24px mdi-delete-outline mdi-light"></i>
-          </button>
-        </li>
-      </ul>
+      <NameList :list="cores" :edit="editar" :remove="excluir" />
     </div>
   </div>
 </template>

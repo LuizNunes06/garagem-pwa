@@ -5,5 +5,6 @@ import CheckBoxField from './FormComponents/VeiculoComponents/CheckboxField.vue'
 import VehicleList from './FormComponents/VeiculoComponents/VehicleList.vue'
 import TextField from './FormComponents/TextField.vue'
 import DescriptionList from './FormComponents/DescriptionList.vue'
+import NameList from './FormComponents/NameList.vue'
 
-export { FormButtonsComponent, InputNumber, SelectField, CheckBoxField, VehicleList, TextField, DescriptionList }
+export { FormButtonsComponent, InputNumber, SelectField, CheckBoxField, VehicleList, TextField, DescriptionList, NameList }

@@ -81,12 +81,7 @@ function adicionarAcessorio(id) {
         <InputNumber label="Preço" step="0.1" v-model="veiculo.preco" />
         <SelectField label="Modelo" :list="modelos" v-model="veiculo.modelo" />
         <SelectField label="Cor" :list="cores" v-model="veiculo.cor" />
-        <CheckBoxField
-          label="Acessórios"
-          :list="acessorios"
-          :func="adicionarAcessorio"
-          v-model="veiculo.acessorios"
-        />
+        <CheckBoxField label="Acessórios" :list="acessorios" :func="adicionarAcessorio" v-model="veiculo.acessorios" />
         <FormButtonsComponent @clear="limpar()" @save="salvar()" />
       </div>
       <VehicleList :list="veiculos" :edit="editar" :remove="excluir" />
