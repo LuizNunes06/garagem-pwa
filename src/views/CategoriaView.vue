@@ -1,6 +1,9 @@
 <script setup>
 import { ref, reactive, onMounted } from "vue";
 import CategoriasApi from "@/api/categorias";
+
+import { TextField, FormButtonsComponent, DescriptionList } from "@/components";
+
 const categoriasApi = new CategoriasApi();
 
 const defaultCategoria = { id: null, descricao: "" };
@@ -41,22 +44,15 @@ async function excluir(id) {
   <div class="main-container">
     <div class="content-container">
       <div class="form">
-        <input type="text" v-model="categoria.descricao" placeholder="Descrição" />
-        <button @click="salvar">
-          <i class="mdi mdi-24px mdi-content-save-outline mdi-light" />
-        </button>
-        <button @click="limpar"><i class="mdi mdi-24px mdi-broom mdi-light"></i></button>
+        <TextField
+          label="Descrição"
+          v-model="categoria.descricao"
+          placeholder="Descrição"
+        />
+        <FormButtonsComponent @clear="limpar()" @save="salvar()" />
       </div>
-      <ul>
-        <li v-for="categoria in categorias" :key="categoria.id">
-          <span @click="editar(categoria)">
-            ({{ categoria.id }}) - {{ categoria.descricao }}
-          </span>
-          <button @click="excluir(categoria.id)">
-            <i class="mdi mdi-24px mdi-delete-outline mdi-light"></i>
-          </button>
-        </li>
-      </ul>
+      <DescriptionList :list="categorias" :edit="editar" :remove="excluir" />
+     
     </div>
   </div>
 </template>
