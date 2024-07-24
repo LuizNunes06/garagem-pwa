@@ -1,7 +1,7 @@
 <script setup>
 import { defineEmits } from "vue";
 
-const emit = defineEmits(["save"], ["clear"]);
+const emit = defineEmits(["save"], ['clear']);
 </script>
 
 <template>

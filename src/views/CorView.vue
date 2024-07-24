@@ -15,7 +15,7 @@ onMounted(async () => {
 });
 
 function limpar() {
-  Object.assign(cor, { ...defaultCore });
+  Object.assign(cor, { ...defaultCor });
 }
 
 async function salvar() {

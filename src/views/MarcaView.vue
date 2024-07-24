@@ -1,6 +1,9 @@
 <script setup>
 import { ref, reactive, onMounted } from "vue";
 import MarcasApi from "@/api/marcas";
+
+import { TextField, FormButtonsComponent, DescriptionList } from "@/components";
+
 const marcasApi = new MarcasApi();
 
 const defaultMarca = { id: null, nome: "", nacionalidade: "" };
@@ -41,11 +44,9 @@ async function excluir(id) {
   <div class="main-container">
     <div class="content-container">
       <div class="form">
-        <input type="text" v-model="marca.descricao" placeholder="Descrição" />
-        <button @click="salvar">
-          <i class="mdi mdi-24px mdi-content-save-outline mdi-light" />
-        </button>
-        <button @click="limpar"><i class="mdi mdi-24px mdi-broom mdi-light"></i></button>
+        <TextField label="Descrição" v-model="marca.nome" placeholder="Descrição" />
+        <TextField label="Nacionalidade" v-model="marca.nacionalidade" placeholder="Nacionalidade" />
+        <FormButtonsComponent @clear="limpar()" @save="salvar()" />
       </div>
 
       <ul>
@@ -53,7 +54,7 @@ async function excluir(id) {
           <span @click="editar(marca)">
             ({{ marca.id }}) - {{ marca.nome }} - {{ marca.nacionalidade }}
           </span>
-          <button @click="excluir(categoria.id)">
+          <button @click="excluir(marca.id)">
             <i class="mdi mdi-24px mdi-delete-outline mdi-light"></i>
           </button>
         </li>

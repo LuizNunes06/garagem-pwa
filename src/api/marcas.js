@@ -12,7 +12,7 @@ export default class MarcasApi {
         const { data } = await axios.put(`/marcas/${marca.id}/`, marca);
         return data.results;
     }
-    async excluirMarca() {
+    async excluirMarca(id) {
         const { data } = await axios.delete(`/marcas/${id}/`);
         return data.results;
     }
