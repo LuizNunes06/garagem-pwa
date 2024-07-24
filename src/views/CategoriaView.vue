@@ -2,7 +2,7 @@
 import { ref, reactive, onMounted } from "vue";
 import CategoriasApi from "@/api/categorias";
 
-import { TextField, FormButtonsComponent, DescriptionList } from "@/components";
+import { TextField, FormButtonsComponent, ApiList } from "@/components";
 
 const categoriasApi = new CategoriasApi();
 
@@ -47,7 +47,7 @@ async function excluir(id) {
         <TextField label="Descrição" v-model="categoria.descricao" placeholder="Descrição" />
         <FormButtonsComponent @clear="limpar()" @save="salvar()" />
       </div>
-      <DescriptionList :list="categorias" :edit="editar" :remove="excluir" />
+      <ApiList :list="categorias" :edit="editar" :remove="excluir" />
     </div>
   </div>
 </template>

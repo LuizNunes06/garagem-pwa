@@ -2,7 +2,7 @@
 import { ref, reactive, onMounted } from "vue";
 import CoresApi from "@/api/cores";
 
-import { TextField, FormButtonsComponent, NameList } from "@/components";
+import { TextField, FormButtonsComponent, ApiList } from "@/components";
 
 const coresApi = new CoresApi();
 
@@ -47,7 +47,7 @@ async function excluir(id) {
         <TextField label="Nome" v-model="cor.nome" placeholder="Cor" />
         <FormButtonsComponent @clear="limpar()" @save="salvar()" />
       </div>
-      <NameList :list="cores" :edit="editar" :remove="excluir" />
+      <ApiList :list="cores" :edit="editar" :remove="excluir" />
     </div>
   </div>
 </template>

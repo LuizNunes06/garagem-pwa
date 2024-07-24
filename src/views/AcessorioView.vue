@@ -1,7 +1,7 @@
 <script setup>
 import { ref, reactive, onMounted } from "vue";
 import AcessoriosApi from "@/api/acessorios";
-import { TextField, FormButtonsComponent, DescriptionList } from "@/components";
+import { TextField, FormButtonsComponent, ApiList } from "@/components";
 
 const acessoriosApi = new AcessoriosApi();
 
@@ -50,7 +50,7 @@ async function excluir(id) {
         />
         <FormButtonsComponent @clear="limpar()" @save="salvar()" />
       </div>
-      <DescriptionList :list="acessorios" :edit="editar" :remove="excluir"/>
+      <ApiList :list="acessorios" :edit="editar" :remove="excluir"/>
     </div>
   </div>
 </template>

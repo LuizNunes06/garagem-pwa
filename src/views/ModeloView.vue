@@ -3,7 +3,7 @@ import { ref, reactive, onMounted, computed } from "vue";
 import ModelosApi from "@/api/modelos";
 import MarcasApi from "@/api/marcas";
 import CategoriasApi from "@/api/categorias";
-import { TextField, SelectField, FormButtonsComponent, NameList } from "@/components";
+import { TextField, SelectField, FormButtonsComponent, ApiList } from "@/components";
 
 const modelosApi = new ModelosApi();
 const marcasApi = new MarcasApi();
@@ -12,8 +12,6 @@ const defaultModelo = { id: null, nome: "", marca: 0, categoria: 0 };
 const modelos = ref([]);
 const marcas = ref([]);
 const categorias = ref([]);
-
-const marca = ref("");
 
 const modelo = reactive({ ...defaultModelo });
 
@@ -58,7 +56,7 @@ async function excluir(id) {
         <SelectField label="Categoria" :list="categorias" v-model="modelo.categoria" />
         <FormButtonsComponent @clear="limpar()" @save="salvar()" />
       </div>
-      <NameList :list="modelos" :edit="editar" :remove="excluir" />
+      <ApiList :list="modelos" :edit="editar" :remove="excluir" />
     </div>
   </div>
 </template>

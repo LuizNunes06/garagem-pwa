@@ -7,7 +7,7 @@ const model = defineModel();
     <p>{{ label }}:</p>
     <select v-model="model">
       <option v-for="i in list" :key="i" :value="i.id">
-        {{ i.nome }}
+        {{ i?.nome? i?.nome: i?.descricao }}
       </option>
     </select>
   </span>
