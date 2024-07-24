@@ -76,9 +76,10 @@ a:hover {
   & .form {
     display: flex;
     gap: 1vw;
-    min-height: 35px;
-    max-width: 60vw;
+    width: auto;
+    max-width: 30vw;
     flex-wrap: wrap;
+    justify-content: space-around;
 
     & input,
     select {

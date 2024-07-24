@@ -89,8 +89,8 @@ function adicionarAcessorio(id) {
         />
         <FormButtonsComponent @clear="limpar()" @save="salvar()" />
       </div>
+      <VehicleList :list="veiculos" :edit="editar" :remove="excluir" />
     </div>
-    <VehicleList :list="veiculos" :edit="editar" :remove="excluir" />
   </div>
 </template>
 

@@ -6,7 +6,7 @@ const model = defineModel();
 <template>
   <ul>
     <li v-for="i in list" :key="i.id">
-      <span @click="edit(i)"> ({{ i.id }}) - {{ i.ano }} - {{ i.preco }} </span>
+      <span @click="edit(i)"> ({{ i.id }}) - {{ i.descricao }} </span>
       <button @click="remove(i.id)">
         <i class="mdi mdi-24px mdi-delete-outline mdi-light"></i>
       </button>
