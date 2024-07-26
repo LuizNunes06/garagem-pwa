@@ -20,4 +20,10 @@ span{
   display: flex;
   gap: 1rem; 
 }
+
+@media screen and (max-width: 768px) {
+  button{
+    width: 100% !important;
+  }
+}
 </style>

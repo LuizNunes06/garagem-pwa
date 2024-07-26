@@ -3,11 +3,10 @@ import SmallNav from "@/components/templates/small/SmallNav.vue";
 </script>
 
 <template>
-  <SmallNav />
   <main>
     <router-view />
   </main>
+  <SmallNav />
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

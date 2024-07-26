@@ -34,6 +34,12 @@ a:hover {
   rotate: 180deg;
 }
 
+h1{
+  text-align: center;
+}
+
+@media screen and (min-width: 769px) {}
+
 .main-container {
   display: flex;
   align-items: center;
@@ -177,4 +183,58 @@ a:hover {
 
   }
 
+}
+
+@media screen and (max-width: 768px) {
+  .content-container {
+    width: 90vw;
+    align-items: center !important;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column !important;
+    gap: 1vw;
+    width: 90% !important;
+    max-width: none !important;
+  }
+
+  i {
+    font-size: 24px !important;
+  }
+
+  & input,
+  select {
+    padding-bottom: 3vw;
+    width: 100% !important;
+  }
+
+  & .checkbox-input {
+    height: 40px !important;
+    border-bottom: #0000002f solid 1px;
+
+    & input {
+      height: 15px !important;
+      width: 15px !important;
+    }
+  }
+
+  ul {
+    list-style: none;
+    width: 90%;
+    max-width: none !important;
+    display: flex;
+    padding: 2vw !important;
+    margin: 0 !important;
+
+    & li {
+      width: 100%;
+      max-width: none !important;
+      padding: .5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: #0000002f 1px solid;
+    }
+  }
 }
