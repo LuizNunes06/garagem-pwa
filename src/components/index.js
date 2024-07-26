@@ -6,5 +6,8 @@ import VehicleList from './FormComponents/VeiculoComponents/VehicleList.vue'
 import TextField from './FormComponents/TextField.vue'
 import ApiList from './FormComponents/ApiList.vue'
 import BrandList from './FormComponents/BrandComponents/BrandList.vue'
+import LargeHeader from './templates/large/LargeNav.vue'
+import SmallHeader from './templates/small/SmallNav.vue'
 
-export { FormButtonsComponent, InputNumber, SelectField, CheckBoxField, VehicleList, TextField, ApiList, BrandList }
+
+export { FormButtonsComponent, InputNumber, SelectField, CheckBoxField, VehicleList, TextField, ApiList, BrandList, LargeHeader, SmallHeader }
