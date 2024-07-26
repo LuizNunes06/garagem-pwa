@@ -1,8 +1,9 @@
 <script setup>
-import SmallNav from "@/components/templates/small/SmallNav.vue";
+import { SmallNav, Header } from "../components/index";
 </script>
 
 <template>
+  <Header/>
   <main>
     <router-view />
   </main>

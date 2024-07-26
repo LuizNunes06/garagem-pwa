@@ -25,7 +25,7 @@ nav {
   position: absolute;
   bottom: 20px;
   left: 50%;
-  transform: translate(-50%, 0);
+  translate: -50% 0;
   border-radius: 50px;
   padding: 10px 20px;
   display: flex;

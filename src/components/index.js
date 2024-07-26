@@ -7,7 +7,21 @@ import TextField from './FormComponents/TextField.vue'
 import ApiList from './FormComponents/ApiList.vue'
 import BrandList from './FormComponents/BrandComponents/BrandList.vue'
 import LargeHeader from './templates/large/LargeNav.vue'
-import SmallHeader from './templates/small/SmallNav.vue'
-import LinksBar from './LinksBar.vue'
+import SmallNav from './templates/small/SmallNav.vue'
+import LinksBar from './mobile/LinksBar.vue'
+import Header from './mobile/Header.vue'
 
-export { FormButtonsComponent, InputNumber, SelectField, CheckBoxField, VehicleList, TextField, ApiList, BrandList, LargeHeader, SmallHeader, LinksBar }
+export {
+    FormButtonsComponent,
+    InputNumber,
+    SelectField,
+    CheckBoxField,
+    VehicleList,
+    TextField,
+    ApiList,
+    BrandList,
+    LargeHeader,
+    SmallNav,
+    LinksBar,
+    Header
+}
