@@ -22,7 +22,7 @@ function ShowLinks(){
 
 <style scoped>
 nav {
-  position: absolute;
+  position: static;
   bottom: 20px;
   left: 50%;
   translate: -50% 0;
