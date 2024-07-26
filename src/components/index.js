@@ -8,6 +8,6 @@ import ApiList from './FormComponents/ApiList.vue'
 import BrandList from './FormComponents/BrandComponents/BrandList.vue'
 import LargeHeader from './templates/large/LargeNav.vue'
 import SmallHeader from './templates/small/SmallNav.vue'
+import LinksBar from './LinksBar.vue'
 
-
-export { FormButtonsComponent, InputNumber, SelectField, CheckBoxField, VehicleList, TextField, ApiList, BrandList, LargeHeader, SmallHeader }
+export { FormButtonsComponent, InputNumber, SelectField, CheckBoxField, VehicleList, TextField, ApiList, BrandList, LargeHeader, SmallHeader, LinksBar }

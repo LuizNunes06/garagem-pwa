@@ -30,7 +30,7 @@ nav {
   align-items: center;
   width: 100%;
   gap: 1vw;
-
+  margin-top: 6vh;
   & a {
     font-size: 1rem;
   }
