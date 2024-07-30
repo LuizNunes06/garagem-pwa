@@ -1,6 +1,5 @@
 <script setup>
 defineProps(["list", "edit", "remove"]);
-const model = defineModel();
 </script>
 
 <template>

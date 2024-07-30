@@ -3,6 +3,13 @@ import { ref, reactive, onMounted } from "vue";
 import AcessoriosApi from "@/api/acessorios";
 import { TextField, FormButtonsComponent, ApiList } from "@/components";
 
+import { useAcessorioStore } from "@/stores/acessorio";
+const acessorioStore = useAcessorioStore();
+async function getAcessorios() {
+  await acessorioStore.getAcessorios();
+  console.log(acessorioStore)
+}
+
 const acessoriosApi = new AcessoriosApi();
 
 const defaultAcessorio = { id: null, descricao: "" };
@@ -10,6 +17,7 @@ const acessorios = ref([]);
 const acessorio = reactive({ ...defaultAcessorio });
 
 onMounted(async () => {
+  await getAcessorios();
   acessorios.value = await acessoriosApi.buscarTodosOsAcessorios();
 });
 
@@ -50,7 +58,7 @@ async function excluir(id) {
         />
         <FormButtonsComponent @clear="limpar()" @save="salvar()" />
       </div>
-      <ApiList :list="acessorios" :edit="editar" :remove="excluir"/>
+      <ApiList :list="acessorioStore.acessorios" :edit="acessorioStore.putAcessorio" :remove="acessorioStore.deleteAcessorio" />
     </div>
   </div>
 </template>
